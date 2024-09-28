@@ -1,9 +1,11 @@
+package P0050;
+
 import java.util.Scanner;
 
-public class Validate {
+public class GetInput {
     public static Scanner sc = new Scanner(System.in);
 
-    public static int getInputInt(int min, int max) {
+    public int getInputInt(int min, int max) {
         while (true) {
             try{
                 int result = Integer.parseInt(sc.nextLine());
@@ -18,7 +20,7 @@ public class Validate {
         }
     }
 
-    public static double getDouble() {
+    public double getDouble() {
         while (true) {
             try {
                 return Double.parseDouble(sc.nextLine());
@@ -28,4 +30,5 @@ public class Validate {
             }
         }
     }
+
 }
