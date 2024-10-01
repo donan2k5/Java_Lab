@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         GetInput getInput = new GetInput();
-        Manager manager = new Manager();
+        Manager manager = new Manager(getInput);
         while (true) {
             System.out.println("=====Contact Program=====");
             System.out.println("1. Add a Contact");

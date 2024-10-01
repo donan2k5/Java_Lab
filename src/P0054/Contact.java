@@ -65,7 +65,4 @@ public class Contact {
         this.phone = phone;
     }
 
-    public void display() {
-        System.out.printf("%-3d%-15s%-10s%-10s%-10s%-10s%-15s\n", id, name, getFirstName(), getLastName(), group, address, phone);
-    }
 }

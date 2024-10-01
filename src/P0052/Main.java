@@ -3,7 +3,7 @@ package P0052;
 public class Main {
     public static void main(String[] args) {
         GetInput getInput = new GetInput();
-        ManageEastAsiaCountries manageEastAsiaCountries = new ManageEastAsiaCountries();
+        ManageEastAsiaCountries manageEastAsiaCountries = new ManageEastAsiaCountries(getInput);
         while (true) {
             System.out.println("=====Menu=====");
             System.out.println("1. Input the information of 11 countries in East Asia");

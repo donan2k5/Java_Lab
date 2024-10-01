@@ -3,7 +3,11 @@ package P0051;
 import java.util.Scanner;
 
 public class Manager {
-    public Scanner sc = new Scanner(System.in);
+    public GetInput getInput;
+
+    public Manager(GetInput getInput) {
+        this.getInput = getInput;
+    }
 
     enum BMI {
         Under_standard, Standard, Overweight, Fat, Very_fat
@@ -43,12 +47,10 @@ public class Manager {
         System.out.println("3. Exit");
         System.out.println("Please choice one option");
         GetInput getInput = new GetInput();
-        int choice = getInput.getInputInt(1, 3);
-        return choice;
+        return getInput.getInputInt(1, 3);
     }
 
     public void printNormalCalculator() {
-        GetInput getInput = new GetInput();
         double memory = 0;
         double result = 0;
         double number = getInput.getDouble("Enter number: ");
@@ -86,7 +88,6 @@ public class Manager {
     }
 
     public void printTypeBMI() {
-        GetInput getInput = new GetInput();
         double weight = getInput.getBmi("Enter weight: ");
         double height = getInput.getBmi("Enter height: ");
         height /= 100;

@@ -2,12 +2,18 @@ package P0052;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.Objects;
 
 public class ManageEastAsiaCountries {
+    public GetInput getInput;
+
+    public ManageEastAsiaCountries(GetInput getInput) {
+        this.getInput = getInput;
+    }
+
     ArrayList<EastAsiaCountries> list = new ArrayList<>();
 
     public void inputInformation() {
-        GetInput getInput = new GetInput();
         String countryCode = getInput.getString("Enter code of country: ");
         String countryName = getInput.getString("Enter name of country: ");
         float totalArea = getInput.getFloat("Enter total Area: ");
@@ -35,11 +41,10 @@ public class ManageEastAsiaCountries {
     }
 
     public void displaySearchCountry() {
-        GetInput getInput = new GetInput();
         String name = getInput.getString("Enter the name you want to search for: ");
         if (searchByName(name) != null) {
             System.out.printf("%-5s%-10s%-15s%-10s\n", "ID", "Name", "Total Area", "Terrain");
-            searchByName(name).display();
+            Objects.requireNonNull(searchByName(name)).display();
         } else {
             System.out.println("NOT FOUND");
         }

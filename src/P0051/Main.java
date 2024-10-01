@@ -2,7 +2,8 @@ package P0051;
 
 public class Main {
     public static void main(String[] args) {
-        Manager manager = new Manager();
+        GetInput getInput = new GetInput();
+        Manager manager = new Manager(getInput);
         while (true) {
             int choice = manager.menu();
             switch (choice) {
