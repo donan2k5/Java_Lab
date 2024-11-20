@@ -1,26 +1,24 @@
-package P0050;
-
 import java.util.Scanner;
 
-public class GetInput {
-    public Scanner sc = new Scanner(System.in);
+public class Validate {
+    public static Scanner sc = new Scanner(System.in);
 
-    public int getInputInt(int min, int max) {
+    public static int getInputInt(int min, int max) {
         while (true) {
-            try {
+            try{
                 int result = Integer.parseInt(sc.nextLine());
-                if (result < min || result > max) {
+                if(result < min || result > max) {
                     throw new NumberFormatException();
                 }
                 return result;
             } catch (NumberFormatException e) {
-                System.out.println("Please enter input number from " + min + " to " + max);
+                System.out.println("Please enter input number from " + min +" to " + max);
                 System.out.println("Enter again: ");
             }
         }
     }
 
-    public double getDouble() {
+    public static double getDouble() {
         while (true) {
             try {
                 return Double.parseDouble(sc.nextLine());
