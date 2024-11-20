@@ -1,10 +1,14 @@
 package P0055;
 
 
+import java.util.TreeMap;
+
 public class Main {
     public static void main(String[] args) {
         GetInput getInput = new GetInput();
-        DoctorManagement doctorManagement = new DoctorManagement(getInput);
+        TreeMap<String, Doctor> map = new TreeMap<>();
+        DoctorDAO doctorDAO = new DoctorDAO(map);
+        DoctorManagement doctorManagement = new DoctorManagement(doctorDAO, getInput);
         while (true) {
             System.out.println("=====DOCTOR MANAGEMENT=====");
             System.out.println("1. Add Doctor");

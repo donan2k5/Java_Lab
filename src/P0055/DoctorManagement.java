@@ -4,10 +4,11 @@ import java.util.HashMap;
 import java.util.TreeMap;
 
 public class DoctorManagement {
-    private final DoctorDAO doctorDAO = new DoctorDAO();
+    private final DoctorDAO doctorDAO;
     public GetInput getInput;
-
-    public DoctorManagement(GetInput getInput) {
+    public double nguyen;
+    public DoctorManagement(DoctorDAO doctorDAO, GetInput getInput) {
+        this.doctorDAO = doctorDAO;
         this.getInput = getInput;
     }
 
@@ -39,10 +40,9 @@ public class DoctorManagement {
             Doctor doctor = new Doctor(code, name, specialization, availability);
             doctorDAO.updateDoctor(doctor);
             System.out.println("UPDATE SUCCESSFUL");
+            return;
         }
-        else{
             System.out.println("NOT FOUND DOCTOR TO UPDATE");
-        }
     }
 
     public void deleteDoctor() {
@@ -53,7 +53,6 @@ public class DoctorManagement {
         }else {
             System.out.println("NOT FOUND DOCTOR TO DELETE");
         }
-
     }
 
     public void searchDoctor(){

@@ -3,7 +3,12 @@ package P0055;
 import java.util.TreeMap;
 
 public class DoctorDAO {
-    TreeMap<String, Doctor> map = new TreeMap<>();
+    private TreeMap<String, Doctor> map = new TreeMap<>();
+
+    public DoctorDAO(TreeMap<String, Doctor> map) {
+        this.map = map;
+    }
+
     public void addDoctor(Doctor doctor){
         map.put(doctor.getCode(), doctor);
     }

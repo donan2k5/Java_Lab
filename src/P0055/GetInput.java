@@ -3,7 +3,7 @@ package P0055;
 import java.util.Scanner;
 
 public class GetInput {
-    public Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
 
     public String getStringNotBlank(String msg) {
         System.out.print(msg);
