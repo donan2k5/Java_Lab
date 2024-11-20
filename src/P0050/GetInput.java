@@ -12,7 +12,7 @@ public class Validate {
                 }
                 return result;
             } catch (NumberFormatException e) {
-                System.out.println("Please enter input number from" + min +" to " + max);
+                System.out.println("Please enter input number from " + min +" to " + max);
                 System.out.println("Enter again: ");
             }
         }
